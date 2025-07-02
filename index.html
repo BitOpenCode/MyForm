@@ -227,24 +227,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0,0,0,0.18); /* чуть менее темный фон */
+            background: rgba(0,0,0,0.18);
         }
         .reg-form-container {
-            width: 100%;
+            width: 420px;
             max-width: 420px;
             min-width: 260px;
-            background: rgba(255,255,255,0.7); /* бело-прозрачный */
+            background: rgba(255,255,255,0.7);
             border-radius: 22px;
             box-shadow: 0 8px 32px rgba(60,60,60,0.10), 0 1.5px 4px rgba(0,0,0,0.04);
             padding: 40px 32px 32px 32px;
             backdrop-filter: blur(12px);
             margin: 0 auto;
-        }
-        @media (max-width: 1000px) {
-            .reg-form-container {
-                max-width: 90vw;
-                padding: 24px 8vw 24px 8vw;
-            }
         }
         .reg-form-container h2 {
             text-align: center;
@@ -333,7 +327,7 @@
                     <option value="ru">Русский</option>
                     <option value="es">Español</option>
                 </select>
-                <button type="submit">Зарегистрироваться</button>
+                <button type="submit">Start</button>
             </form>
             <div class="thanks" id="thanksMsg" style="display:none;">Спасибо!</div>
         </div>
@@ -433,7 +427,7 @@
                     language: form.language.value,
                     tgid: tg.initDataUnsafe?.user?.id || null
                 };
-                await fetch('https://n8n.fortisbtc.com/webhook/registration', {
+                await fetch('https://n8n.blc.am/webhook-test/registration', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
